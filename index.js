@@ -11,6 +11,10 @@ if (!fs.existsSync(folderPath)) {
   fs.mkdirSync(folderPath);
 }
 
+app.get("/", (req, res) => {
+  res.send("Welcome to the Text File API!");
+});
+
 app.get("/create-file", (req, res) => {
   const date = new Date();
   const fileName = `${date.toISOString().replace(/:/g, "-")}.txt`;
